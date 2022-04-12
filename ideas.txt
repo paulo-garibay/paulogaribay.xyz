@@ -1,0 +1,14 @@
+Este archivo, más que nada, es para poner ideas que quiero lograr con este portal.
+Me imagino tres secciones:
+- Acerca de mi
+- Blog
+- Experimentos
+
+Acerca de Mi:
+En esta sección puedo hablar de mi persona, tanto a modo profesional como a modo de hobbies, que es lo que quiero lograr con este portal
+
+Blog:
+Puedo redirigir a las personas a entradas de mi blog, debo de variar dinámicamente el contenido
+
+Experimento:
+Listado de Experimentos que tenga en línea, se me antojan cosas de webgl, ya sea usando Three o P5, ya veremos a que lleva esto
