@@ -12,3 +12,5 @@ Puedo redirigir a las personas a entradas de mi blog, debo de variar dinámicame
 
 Experimento:
 Listado de Experimentos que tenga en línea, se me antojan cosas de webgl, ya sea usando Three o P5, ya veremos a que lleva esto
+
+Esta línea es solo para probar el cambio de autor del commit en github
