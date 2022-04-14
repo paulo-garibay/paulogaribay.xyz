@@ -1,7 +1,9 @@
 let myTurtle;
 let myGoat;
 
-let part;
+let turtleVert;
+let goatVert;
+let myVert = [];
 
 let myFont;
 
@@ -20,7 +22,15 @@ function setup()
   textSize(height / 13);
   textAlign(CENTER, CENTER);
   camera(0,0,250);
-  part = new myParticle(createVector(-50,5,100), createVector(100,100,100), color(255), color(100));
+
+  turtleVert = myTurtle.computeFaces();
+  goatVert = myGoat.computeFaces();
+
+  for(let v = 0; v < turtleVert.vertices.length; v++)
+  {
+      let eachVert = new myParticle(turtleVert.vertices[v], goatVert.vertices[v], color(200), color(200));
+      myVert.push(eachVert);
+  }
 
 }
 
@@ -28,18 +38,24 @@ function draw()
 {
     background(0,229,229);
     
-   // rotateY(frameCount * 0.01);
+    rotateY(frameCount * 0.01);
     
     stroke(255,64,64,150);
     fill(255, 145, 164, 180);
-    //model(myTurtle);
-    //model(myGoat);
+    model(myTurtle);
+    model(myGoat);
     
-    part.Update();
-    part.Draw();
-
+    noFill();
+    beginShape(POINTS);
+    for(let p = 0; p < myVert.length; p++)
+    {
+        myVert[p].Update();
+        myVert[p].Draw();
+    }
+    endShape();
+    
     fill(255,244,79);
-    //text("soon", 0, 0);
+    text("soon", 0, 0);
 }
 
 function morph()

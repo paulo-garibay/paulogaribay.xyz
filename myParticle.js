@@ -8,22 +8,26 @@ class myParticle
         this.finCol = finCol;
         this.actPos = iniPos;
         this.actCol = iniCol;
+
+        this.amt = 0.0;
+        this.dir = 0.005;
     }
 
     Update()
     {
-       /* this.actPos.x = map(this.actPos.x, 0.0, this.iniPos.x, 0.0, this.finPos.x, false);
-        this.actPos.y = map(this.actPos.y, 0.0, this.iniPos.y, 0.0, this.finPos.y, false);
-        this.actPos.z = map(this.actPos.z, 0.0, this.iniPos.z, 0.0, this.finPos.z, true);*/
-        this.actPos = p5.Vector.lerp(this.iniPos, this.finPos, 0.5);
+        if(this.amt > 1 || this.amt < 0)
+        {
+            this.dir *= -1;
+        }
+
+        this.amt += this.dir;
+        
+        this.actPos = p5.Vector.lerp(this.iniPos, this.finPos, this.amt);
     }
 
     Draw()
     {
-        fill(this.actCol);
-        //vertex(this.actPos);
-        ellipse(this.actPos.x, this.actPos.y, 5);
-        ellipse(this.iniPos.x, this.iniPos.y, 5);
-        ellipse(this.finPos.x, this.finPos.y, 5);
+        stroke(this.actCol); 
+        vertex(this.actPos.x, this.actPos.y, this.actPos.z);
     }
 }
